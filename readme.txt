@@ -6,7 +6,7 @@ Requires at least: 2.0
 Tested up to: 2.5.1
 Stable tag: trunk
 
-FlareSmith is a plugin to integrate the FeedBurner Stats and FeedFlare services into your WordPress site - all without having to edit any of your theme files!
+FlareSmith is a plugin to integrate the FeedBurner Stats and FeedFlare services into your WordPress site - without editing your theme!
 
 == Description ==
 
