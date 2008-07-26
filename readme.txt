@@ -34,7 +34,8 @@ Yes, it does.
 
 It does now. _Thanks to [Bran](http://www.inspirational-board.com/) for the [feature suggestion](http://xentek.net/code/wordpress/plugins/flaresmith/#comment-886)._
 
-= Does it insert FeedFlare on my Pages?=
+= Does it insert FeedFlare on my Pages? =
+
 No. It only operates on blog posts. Pages don't appear in Feeds and as such are outside of FeedBurner's domain.
 
 
