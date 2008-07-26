@@ -3,7 +3,7 @@ Contributors: xenlab
 Donate link: http://xentek.net/code/wordpress/plugins/flaresmith/
 Tags: feedburner, stats, feedflare
 Requires at least: 2.0
-Tested up to: 2.5.1
+Tested up to: 2.6
 Stable tag: trunk
 
 FlareSmith is a plugin to integrate the FeedBurner Stats and FeedFlare services into your WordPress site - without editing your theme!
@@ -13,8 +13,6 @@ FlareSmith is a plugin to integrate the FeedBurner Stats and FeedFlare services 
 FlareSmith is a plugin to integrate the FeedBurner Stats and FeedFlare services into your WordPress site - all without having to edit any of your theme files!
 
 It acts as a content filter, and adds the required javascript to your site after the output of your original content. It plays well with others (like other content filters), and works quite nicely with the FeedBurner FeedSmith plugin. In fact, I choose the name of my plugin as an homage to FeedSmith.
-
-FeedFlare is only inserted on single pages (the full blog post).
 
 == Installation ==
 
@@ -31,6 +29,14 @@ Yes it does. Once you've signed up and 'burned' your feed. You will need to acti
 = Does this work with FeedBurner Pro Stats? =
 
 Yes, it does.
+
+= Will it display FeedFlare on my homepage or other lists of blog posts? =
+
+It does now. _Thanks to [Bran](http://www.inspirational-board.com/) for the [feature suggestion](http://xentek.net/code/wordpress/plugins/flaresmith/#comment-886)._
+
+= Does it insert FeedFlare on my Pages?=
+No. It only operates on blog posts. Pages don't appear in Feeds and as such are outside of FeedBurner's domain.
+
 
 == Screenshots ==
 
