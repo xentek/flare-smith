@@ -25,8 +25,13 @@ Author URI: http://www.xentek.net/
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
+add_action('init','flaresmith_load_translation');
 add_action('admin_menu', 'add_flaresmith_options_page');
 add_filter('the_content','flaresmith_insert');
+
+function flaresmith_load_translation() {
+	load_plugin_textdomain('feedflare', PLUGINDIR.'/'.dirname(plugin_basename(__FILE__)));
+}
 
 function add_flaresmith_options_page() {
 	if (function_exists('add_options_page')) {

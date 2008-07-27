@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/feedflare\n"
-"POT-Creation-Date: 2008-07-26 22:32+0000\n"
+"POT-Creation-Date: 2008-07-26 23:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,6 +15,32 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: flaresmith-options.php:25
+msgid "FlareSmith Options"
+msgstr ""
+
+#: flaresmith-options.php:27
+msgid ""
+"This plugin will build your FeedBurner Stats / FeedFlare javascript for you. "
+"All you have to do is paste in the unique part of your FeedBurner address."
+msgstr ""
+
+#: flaresmith-options.php:27
+msgid "(The bolded part in the example)"
+msgstr ""
+
+#: flaresmith-options.php:28
+msgid "Example:"
+msgstr ""
+
+#: flaresmith-options.php:35
+msgid "FeedBurner Feed ID:"
+msgstr ""
+
+#: flaresmith-options.php:39
+msgid "Check this box if you want FeedFlare to show up on all pages."
+msgstr ""
+
 #: flaresmith-options.php:41
-msgid "Update Options »"
+msgid "Update Options ¬ª"
 msgstr ""
