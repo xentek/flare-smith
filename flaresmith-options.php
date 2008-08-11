@@ -21,22 +21,29 @@
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 ?>
+<?php
+if ( !empty($_POST ) ) : 
+	update_option('feedflare_snippet',$_POST['feedflare_snippet']);
+	update_option('feedflare_show_homepage',$_POST['feedflare_show_homepage']);
+?>
+<div id="message" class="updated fade"><p><strong><?php _e('Options saved.','feedflare') ?></strong></p></div>
+<?php endif; ?>
 <div class="wrap">
 	<h2><?php _e('FlareSmith Options','feedflare'); ?></h2>
 
 	<p><?php _e('This plugin will build your FeedBurner Stats / FeedFlare javascript for you.','feedflrare'); ?><?php _e('All you have to do is paste in the unique part of your FeedBurner address.','feedflare'); ?><br /><?php _e('(The bolded part in the example)','feedflare'); ?>.</p>
 	<p><em><?php _e('Example:','feedflare'); ?> http://feeds.feedburner.com/</em><strong><?php _e('MyUniqueFeedName','feedflare'); ?></strong></p>
 
-	<form method="post" action="" id="feedflar-settings">
+	<form method="post" action="" id="feedflare-settings">
 		<?php wp_nonce_field('update-options'); ?>
 		<input type="hidden" name="action" value="update" />
 		<input type="hidden" name="page_options" value="feedflare_snippet" />
 		<input type="hidden" name="page_options" value="feedflare_show_homepage" />
-		<label for="feedflare_snippet"><?php _e('FeedBurner Feed ID:','feedflare'); ?></label> <input type="text" name="feedflare_snippet" value="<?php echo get_option('feedflare_snippet'); ?>" size="45" />
+		<label for="feedflare_snippet"><?php _e('FeedBurner Feed ID:','feedflare'); ?></label> <input type="text" name="feedflare_snippet" id="feedflare_snippet" value="<?php echo get_option('feedflare_snippet'); ?>" size="45" />
 		<?php $feedflare_show_homepage = get_option('feedflare_show_homepage'); ?>
-		<p><label for="feedflare_show_homepage">Do you use FeedFlare?</label> <input type="checkbox" name="feedflare_show_homepage" value="1" <?php if ($feedflare_show_homepage) { ?>checked="checked"<?php } ?>> <small><?php _e('Check this box if you want FeedFlare to show up on all pages.','feedflare'); ?> <em><?php _e('Do not check this box if you only use FeedBurner stats.','feedflare'); ?></em></small></p>
+		<p><label for="feedflare_show_homepage">Do you use FeedFlare?</label> <input type="checkbox" name="feedflare_show_homepage" id="feedflare_show_homepage" value="1" <?php if ($feedflare_show_homepage) { ?>checked="checked"<?php } ?>> <small><?php _e('Check this box if you want FeedFlare to show up on all pages.','feedflare'); ?> <em><?php _e('Do not check this box if you only use FeedBurner stats.','feedflare'); ?></em></small></p>
 		<p class="submit">
-			<input type="submit" name="Submit" value="<?php _e('Update Options »', 'feedflare') ?>" />
+			<input type="submit" name="submit" value="<?php _e('Update Options »', 'feedflare') ?>" />
 		</p>
 	</form>
 	<p><a href="http://feedburner.com/" title="i heart feedburner"><img src="<?php echo get_bloginfo('wpurl'); ?>/wp-content/plugins/flaresmith/i_heart_fb.gif" /></a></p>
