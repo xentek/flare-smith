@@ -27,7 +27,7 @@
 	<p><?php _e('This plugin will build your FeedBurner Stats / FeedFlare javascript for you.','feedflrare'); ?><?php _e('All you have to do is paste in the unique part of your FeedBurner address.','feedflare'); ?><br /><?php _e('(The bolded part in the example)','feedflare'); ?>.</p>
 	<p><em><?php _e('Example:','feedflare'); ?> http://feeds.feedburner.com/</em><strong><?php _e('MyUniqueFeedName','feedflare'); ?></strong></p>
 
-	<form method="post" action="options.php">
+	<form method="post" action="" id="feedflar-settings">
 		<?php wp_nonce_field('update-options'); ?>
 		<input type="hidden" name="action" value="update" />
 		<input type="hidden" name="page_options" value="feedflare_snippet" />
