@@ -16,7 +16,7 @@ It acts as a content filter, and adds the required javascript to your site after
 
 == Installation ==
 
-1. Unzip and Upload the 'flaresmith' folder to the `/wp-content/plugins/` directory
+1. Unzip and Upload the 'feedflare' folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Navigate to the 'Settings' menu in WordPress, and enter the unique part of your FeedBurner address.
 
