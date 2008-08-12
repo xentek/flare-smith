@@ -16,8 +16,8 @@ It acts as a content filter, and adds the required javascript to your site after
 
 == Installation ==
 
-1. Unzip and Upload the 'feedflare' folder to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
+1. Unzip and Upload the 'feedflare' folder to the `/wp-content/plugins/` directory.
+2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Navigate to the 'Settings' menu in WordPress, and enter the unique part of your FeedBurner address.
 
 == Frequently Asked Questions ==
@@ -38,6 +38,9 @@ It does now. _Thanks to [Bran](http://www.inspirational-board.com/) for the [fea
 
 No. It only operates on blog posts. Pages don't appear in Feeds and as such are outside of FeedBurner's domain.
 
+= Does it work with Wordpress MU? =
+
+Yes, as of version 0.13 it does. _Thanks to [Guillermo](http://liveinatx.net/) for the [bug report](http://xentek.net/code/wordpress/plugins/flaresmith/#comment-671)._
 
 == Screenshots ==
 
