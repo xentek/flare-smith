@@ -23,28 +23,55 @@
 ?>
 <?php
 if ( !empty($_POST ) ) : 
+	update_option('feedflare_address',$_POST['feedflare_address']);
 	update_option('feedflare_snippet',$_POST['feedflare_snippet']);
 	update_option('feedflare_show_homepage',$_POST['feedflare_show_homepage']);
 ?>
 <div id="message" class="updated fade"><p><strong><?php _e('Options saved.','feedflare') ?></strong></p></div>
 <?php endif; ?>
+<?php
+	$feedflare_show_homepage = get_option('feedflare_show_homepage');
+	$feedflare_address = get_option('feedflare_address');
+	if (!$feedflare_address = get_option('feedflare_address')) {
+		$feedflare_address = "http://feeds.feedburner.com/";
+	}
+?>
 <div class="wrap">
 	<h2><?php _e('FlareSmith Options','feedflare'); ?></h2>
 
-	<p><?php _e('This plugin will build your FeedBurner Stats / FeedFlare javascript for you.','feedflrare'); ?><?php _e('All you have to do is paste in the unique part of your FeedBurner address.','feedflare'); ?><br /><?php _e('(The bolded part in the example)','feedflare'); ?>.</p>
-	<p><em><?php _e('Example:','feedflare'); ?> http://feeds.feedburner.com/</em><strong><?php _e('MyUniqueFeedName','feedflare'); ?></strong></p>
-
+	<p><?php _e('This plugin will build your FeedFlare javascript for you.','feedflrare'); ?> <?php _e('All you have to do is paste in the unique part of your FeedBurner address.','feedflare'); ?> <br />
+		<small><em><?php _e('Example:','feedflare'); ?> http://feeds.feedburner.com/</em><strong><?php _e('MyUniqueFeedName','feedflare'); ?></strong></small>
+	</p>
+	
 	<form method="post" action="" id="feedflare-settings">
 		<?php wp_nonce_field('update-options'); ?>
 		<input type="hidden" name="action" value="update" />
+		<input type="hidden" name="page_options" value="feedflare_address" />
 		<input type="hidden" name="page_options" value="feedflare_snippet" />
 		<input type="hidden" name="page_options" value="feedflare_show_homepage" />
-		<label for="feedflare_snippet"><?php _e('FeedBurner Feed ID:','feedflare'); ?></label> <input type="text" name="feedflare_snippet" id="feedflare_snippet" value="<?php echo get_option('feedflare_snippet'); ?>" size="45" />
-		<?php $feedflare_show_homepage = get_option('feedflare_show_homepage'); ?>
-		<p><label for="feedflare_show_homepage">Do you use FeedFlare?</label> <input type="checkbox" name="feedflare_show_homepage" id="feedflare_show_homepage" value="1" <?php if ($feedflare_show_homepage) { ?>checked="checked"<?php } ?>> <small><?php _e('Check this box if you want FeedFlare to show up on all pages.','feedflare'); ?> <em><?php _e('Do not check this box if you only use FeedBurner stats.','feedflare'); ?></em></small></p>
-		<p class="submit">
-			<input type="submit" name="submit" value="<?php _e('Update Options »', 'feedflare') ?>" />
-		</p>
+		
+		<fieldset style="border-top: 1px #DADADA solid; padding: 20px;">
+			<legend><strong><?php _e('FeedBurner Feed ID','feedflare'); ?></strong></legend>
+				<label class="hidden" for="feedflare_snippet"><?php _e('FeedBurner Feed ID','feedflare'); ?>:</label> <input type="text" name="feedflare_snippet" id="feedflare_snippet" value="<?php echo get_option('feedflare_snippet'); ?>" size="45" />
+		</fieldset>
+
+		<fieldset style="border-top: 1px #DADADA solid; padding: 20px;">
+			<legend><strong><?php _e('Do you use FeedFlare?','feedflare'); ?></strong></legend>
+			<label class="hidden" for="feedflare_show_homepage"><?php _e('Do you use FeedFlare?','feedflare'); ?></label> <input type="checkbox" name="feedflare_show_homepage" id="feedflare_show_homepage" value="1" <?php if ($feedflare_show_homepage) { ?>checked="checked"<?php } ?>> <small><?php _e('Check this box if you want FeedFlare to show up on all pages.','feedflare'); ?> <em><?php _e('Do not check this box if you only use FeedBurner stats.','feedflare'); ?></em></small>
+		</fieldset>
+		
+		<fieldset style="border-top: 1px #DADADA solid; padding: 20px;">
+			<legend><strong><?php _e('FeedBurner Address','feedflare'); ?></strong></legend>
+				<label class="hidden" for="feedflare_address"><?php _e('FeedBurner Address','feedflare'); ?>:</label>
+				<input name="feedflare_address" type="radio" value="http://feeds.feedburner.com/" <?php if ($feedflare_address == 'http://feeds.feedburner.com/' || !$feedflare_address) { echo 'checked="checked"'; } ?> /> Old School <small>(http://feeds.feedburner.com/)</small><br />
+				<input name="feedflare_address" type="radio" value="http://feedproxy.google.com/" <?php if ($feedflare_address == 'http://feedproxy.google.com/') { echo 'checked="checked"'; } ?> /> New School <small>(http://feedproxy.google.com/)</small><br />
+				<input name="feedflare_address" type="radio" value="<?php bloginfo('url'); ?>/" <?php if ($feedflare_address == get_bloginfo('url')) { echo 'checked="checked"'; } ?> /> My Brand <small>(<?php bloginfo('url'); ?>/)</small>
+				
+			<p><small><?php _e('If you are using the new FeedBurner Adsense integration, or are using MyBrand, you will need to change the FeedBurner Address, too.','feedflare'); ?></small></p>
+		</fieldset>
+		<div class="tablenav">
+			<div class="alignleft"><input type="submit" name="submit" value="<?php _e('Update Options »', 'feedflare') ?>" class="button-secondary" /></div>
+			<div class="alignright"><a href="http://feedburner.com/" title="i heart feedburner"><img valign="middle" src="/<?php echo PLUGINDIR.'/'.dirname(plugin_basename(__FILE__)); ?>/i_heart_fb.gif" /></a></div>
+		</div>
 	</form>
-	<p><a href="http://feedburner.com/" title="i heart feedburner"><img src="<?php echo get_bloginfo('wpurl'); ?>/wp-content/plugins/flaresmith/i_heart_fb.gif" /></a></p>
 </div>

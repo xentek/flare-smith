@@ -1,9 +1,9 @@
 === Plugin Name ===
 Contributors: xenlab
-Donate link: http://xentek.net/code/wordpress/plugins/flaresmith/
-Tags: feedburner, stats, feedflare
+Donate link: http://xentek.net/code/wordpress/plugins/
+Tags: feedburner, stats, feedflare, adsense, wordpressmu
 Requires at least: 2.0
-Tested up to: 2.6
+Tested up to: 2.6.1
 Stable tag: trunk
 
 FlareSmith is a plugin to integrate the FeedBurner Stats and FeedFlare services into your WordPress site - without editing your theme!
@@ -14,11 +14,15 @@ FlareSmith is a plugin to integrate the FeedBurner Stats and FeedFlare services 
 
 It acts as a content filter, and adds the required javascript to your site after the output of your original content. It plays well with others (like other content filters), and works quite nicely with the FeedBurner FeedSmith plugin. In fact, I choose the name of my plugin as an homage to FeedSmith.
 
+_A **FeedBurner** account is required to use this plugin._
+
 == Installation ==
 
 1. Unzip and Upload the 'feedflare' folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Navigate to the 'Settings' menu in WordPress, and enter the unique part of your FeedBurner address.
+4. If you want FeedFlare units to be shown when ever a post is displayed (including the homepage, and other lists of posts), check the box.
+5. If you are using Adsense for Feeds, or the My Brand service, then set the option for your address.
 
 == Frequently Asked Questions ==
 
@@ -41,6 +45,10 @@ No. It only operates on blog posts. Pages don't appear in Feeds and as such are 
 = Does it work with Wordpress MU? =
 
 Yes, as of version 0.13 it does. _Thanks to [Guillermo](http://liveinatx.net/) for the [bug report](http://xentek.net/code/wordpress/plugins/flaresmith/#comment-671)._
+
+= Does it support Adsense enabled feeds or the My Brand Service? =
+
+Yes, as of version 0.15, you can set the FeedBurner address you want to use. _Thanks to [David K.](http://handleit.info/) for [pointing this out](http://xentek.net/code/wordpress/plugins/flaresmith/#comment-984)._
 
 == Screenshots ==
 
