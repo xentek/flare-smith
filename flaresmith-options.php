@@ -23,7 +23,11 @@
 ?>
 <?php
 if ( !empty($_POST ) ) : 
-	update_option('feedflare_address',$_POST['feedflare_address']);
+	if ($_POST['feedflare_address'] == 'mybrand') {
+		update_option('feedflare_address',$_POST['feedflare_mybrand']);
+	} else {
+		update_option('feedflare_address',$_POST['feedflare_address']);
+	}
 	update_option('feedflare_snippet',$_POST['feedflare_snippet']);
 	update_option('feedflare_show_homepage',$_POST['feedflare_show_homepage']);
 ?>
@@ -33,11 +37,19 @@ if ( !empty($_POST ) ) :
 	$feedflare_show_homepage = get_option('feedflare_show_homepage');
 	$feedflare_address = get_option('feedflare_address');
 	if (!$feedflare_address = get_option('feedflare_address')) {
-		$feedflare_address = "http://feeds.feedburner.com/";
+		$feedflare_address = 'http://feeds.feedburner.com/';
+	}
+	
+	if ($feedflare_address == 'http://feeds.feedburner.com/' OR $feedflare_address == 'http://feedproxy.google.com/') {
+		$mybrand = false;
+		$feedflare_mybrand = get_bloginfo('url') . '/';
+	} else {
+		$mybrand = true;
+		$feedflare_mybrand = $feedflare_address;
 	}
 ?>
 <div class="wrap">
-	<h2><?php _e('FlareSmith Options','feedflare'); ?></h2>
+	<h2><?php _e('Flare Smith Options','feedflare'); ?></h2>
 
 	<p><?php _e('This plugin will build your FeedFlare javascript for you.','feedflrare'); ?> <?php _e('All you have to do is paste in the unique part of your FeedBurner address.','feedflare'); ?> <br />
 		<small><em><?php _e('Example:','feedflare'); ?> http://feeds.feedburner.com/</em><strong><?php _e('MyUniqueFeedName','feedflare'); ?></strong></small>
@@ -65,13 +77,18 @@ if ( !empty($_POST ) ) :
 				<label class="hidden" for="feedflare_address"><?php _e('FeedBurner Address','feedflare'); ?>:</label>
 				<input name="feedflare_address" type="radio" value="http://feeds.feedburner.com/" <?php if ($feedflare_address == 'http://feeds.feedburner.com/' || !$feedflare_address) { echo 'checked="checked"'; } ?> /> Old School <small>(http://feeds.feedburner.com/)</small><br />
 				<input name="feedflare_address" type="radio" value="http://feedproxy.google.com/" <?php if ($feedflare_address == 'http://feedproxy.google.com/') { echo 'checked="checked"'; } ?> /> New School <small>(http://feedproxy.google.com/)</small><br />
-				<input name="feedflare_address" type="radio" value="<?php bloginfo('url'); ?>/" <?php if ($feedflare_address == get_bloginfo('url')) { echo 'checked="checked"'; } ?> /> My Brand <small>(<?php bloginfo('url'); ?>/)</small>
-				
-			<p><small><?php _e('If you are using the new FeedBurner Adsense integration, or are using MyBrand, you will need to change the FeedBurner Address, too.','feedflare'); ?></small></p>
+				<input name="feedflare_address" type="radio" value="mybrand" <?php if ($mybrand) { echo 'checked="checked"'; } ?> /> My Brand <input name="feedflare_mybrand" id="feedflare_mybrand" value="<?php echo $feedflare_mybrand; ?>" size="30" style="font-size: 75%;" />
+
+			<p><small>
+				<?php _e('If you are using the new FeedBurner Adsense integration, or are using the My Brand service, you will need to change the FeedBurner Address, too.','feedflare'); ?><br />
+				<?php _e('When supplying your My Brand address, you URL MUST start with ','feedflare'); ?><em>http://</em><?php _e(' and end with a slash.','feedflare'); ?>
+			</small></p>
 		</fieldset>
+		
 		<div class="tablenav">
 			<div class="alignleft"><input type="submit" name="submit" value="<?php _e('Update Options »', 'feedflare') ?>" class="button-secondary" /></div>
-			<div class="alignright"><a href="http://feedburner.com/" title="i heart feedburner"><img valign="middle" src="/<?php echo PLUGINDIR.'/'.dirname(plugin_basename(__FILE__)); ?>/i_heart_fb.gif" /></a></div>
+			<div class="alignright"><a href="http://xentek.net/?utm_source=plugin&amp;utm_medium=options&amp;utm_content=icon&amp;utm_campaign=flaresmith" title="visit xentek.net - creator of this plugin"><img src="http://xentek.net/img/icons/recruiter_32.png" width="52" height="32" alt="bullhorn icon" title="visit xentek.net - creator of this plugin" border="0" valign="middle" /></a> <a href="http://feedburner.com/" title="i heart feedburner"><img valign="middle" src="/<?php echo PLUGINDIR.'/'.dirname(plugin_basename(__FILE__)); ?>/i_heart_fb.gif" /></a></div>
 		</div>
+		
 	</form>
 </div>

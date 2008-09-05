@@ -50,6 +50,8 @@ Yes, as of version 0.13 it does. _Thanks to [Guillermo](http://liveinatx.net/) f
 
 Yes, as of version 0.15, you can set the FeedBurner address you want to use. _Thanks to [David K.](http://handleit.info/) for [pointing this out](http://xentek.net/code/wordpress/plugins/flaresmith/#comment-984)._
 
+_Version 0.17 fixes an issues with My Brand support, and lets you supply your MyBrand URL, which is probably different than your blog url (which v0.15 and v0.16 assumed)._
+
 == Screenshots ==
 
 1. FlareSmith Options Screen
