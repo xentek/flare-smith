@@ -3,7 +3,7 @@ Contributors: xenlab
 Donate link: http://xentek.net/code/wordpress/plugins/
 Tags: feedburner, stats, feedflare, adsense, wordpressmu
 Requires at least: 2.0
-Tested up to: 2.6.1
+Tested up to: 2.9
 Stable tag: trunk
 
 FlareSmith is a plugin to integrate the FeedBurner Stats and FeedFlare services into your WordPress site - without editing your theme!
@@ -51,6 +51,13 @@ Yes, as of version 0.13 it does. _Thanks to [Guillermo](http://liveinatx.net/) f
 Yes, as of version 0.15, you can set the FeedBurner address you want to use. _Thanks to [David K.](http://handleit.info/) for [pointing this out](http://xentek.net/code/wordpress/plugins/flaresmith/#comment-984)._
 
 _Version 0.17 fixes an issues with My Brand support, and lets you supply your MyBrand URL, which is probably different than your blog url (which v0.15 and v0.16 assumed)._
+
+= I want to help with development of this Plugin! =
+
+The project is now hosted on [github.com](http://github.com/xentek/flare-smith). Just fork the project and send me a pull request.
+
+[New to git?](http://delicious.com/ericmarden/git)
+
 
 == Screenshots ==
 

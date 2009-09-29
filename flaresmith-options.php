@@ -22,7 +22,8 @@
 */
 ?>
 <?php
-if ( !empty($_POST ) ) : 
+if ( !empty($_POST ) ) :
+    check_admin_referer('update-options');
 	if ($_POST['feedflare_address'] == 'mybrand') {
 		update_option('feedflare_address',$_POST['feedflare_mybrand']);
 	} else {
