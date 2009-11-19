@@ -60,7 +60,10 @@ The project is now hosted on [github.com](http://github.com/xentek/flare-smith).
 
 == Changelog == 
 
-= 0.18 =
+= 0.20 = 
+* Added settings link to the plugin page
+
+= 0.19 =
 * Refactored to not require a global $post object. Just using straight get_permalink() instead.
 
 = 0.17 =
