@@ -3,7 +3,7 @@
 Plugin Name: Flare Smith
 Plugin URI: http://xentek.net/code/wordpress/plugins/flaresmith/
 Description: Plugin to insert FeedBurner's javascript to support FeedBurner Stats and FeedFlare units on your WordPress site. All without having to edit your theme files! <a href="options-general.php?page=feedflare/flaresmith-options.php" title="Configure the FlareSmith plugin">Configure Settings</a> or <a href="http://xentek.net/code/wordpress/plugins/flaresmith/?utm_source=plugin&amp;utm_medium=list&amp;utm_campaign=flaresmith" title="Get help with FlareSmith for suggest new features.">Get Support</a>.
-Version: 0.20
+Version: 0.20.4
 Author: Eric Marden
 Author URI: http://www.xentek.net/
 */
@@ -34,13 +34,13 @@ add_filter("plugin_action_links_$plugin", 'flaresmith_plugin_settings_link');
 
 function flaresmith_plugin_settings_link($links)
 {
-	$settings_link = '<a href="options-general.php?page=flaresmith-options.php">Settings</a>';
+	$settings_link = '<a href="options-general.php?page='. end( explode('/', dirname(__FILE__) ) ) . '/flaresmith-options.php">Settings</a>';
 	array_unshift($links, $settings_link);
 	return $links;
 }
 
 function flaresmith_load_translation() {
-	load_plugin_textdomain('feedflare', PLUGINDIR.'/'.dirname(plugin_basename(__FILE__)));
+	load_plugin_textdomain('feedflare', dirname(plugin_basename(__FILE__)));
 }
 
 function add_flaresmith_options_page() {

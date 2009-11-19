@@ -1,6 +1,6 @@
 === Plugin Name ===
 Contributors: xenlab
-Donate link: http://j.mp/dontate-to-xentek
+Donate link: http://j.mp/donate-to-xentek
 Tags: feedburner, stats, feedflare, adsense, wordpressmu
 Requires at least: 2.0
 Tested up to: 2.9
