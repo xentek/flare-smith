@@ -1,6 +1,6 @@
 === Plugin Name ===
 Contributors: xenlab
-Donate link: http://xentek.net/code/wordpress/plugins/
+Donate link: http://j.mp/dontate-to-xentek
 Tags: feedburner, stats, feedflare, adsense, wordpressmu
 Requires at least: 2.0
 Tested up to: 2.9
@@ -58,6 +58,19 @@ The project is now hosted on [github.com](http://github.com/xentek/flare-smith).
 
 [New to git?](http://delicious.com/ericmarden/git)
 
+== Changelog == 
+
+= 0.18 =
+* Refactored to not require a global $post object. Just using straight get_permalink() instead.
+
+= 0.17 =
+* Fixed issue with _My Brand_ support in the plugin
+
+= 0.15 =
+* Added _My Brand_ support for custom feedburner url aliases
+
+= 0.13 =
+* Patched to work with WPMU
 
 == Screenshots ==
 
