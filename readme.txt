@@ -52,6 +52,10 @@ Yes, as of version 0.15, you can set the FeedBurner address you want to use. _Th
 
 _Version 0.17 fixes an issues with My Brand support, and lets you supply your MyBrand URL, which is probably different than your blog url (which v0.15 and v0.16 assumed)._
 
+= Can I style the output? =
+
+As of v0.20, I have wrapped the feedflare output in a DIV with an unique ID and Class that you can use to theme it. _Thanks to [Alexander Gieg](http://www.alexandergieg.org/) for [the suggestion](http://xentek.net/code/wordpress/plugins/flaresmith/comment-page-2/#comment-4317)!_
+
 = I want to help with development of this Plugin! =
 
 The project is now hosted on [github.com](http://github.com/xentek/flare-smith). Just fork the project and send me a pull request.
